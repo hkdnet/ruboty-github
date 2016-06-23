@@ -1,4 +1,4 @@
-This repository derived from increments/ruboty-qiita-github 
+This repository was derived from increments/ruboty-qiita-github 
 
 # Ruboty::Github
 Manage GitHub via Ruboty.
