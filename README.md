@@ -1,3 +1,5 @@
+This repository was derived from increments/ruboty-qiita-github 
+
 # Ruboty::Github
 Manage GitHub via Ruboty.
 This gem adds `deploy pull request` command to original ruboty-github plugin.
@@ -16,12 +18,10 @@ gem "ruboty-github"
 @ruboty pull request "<title>" from <from> to <to>        - Create a new Pull Request
 @ruboty deploy pull request "<title>" from <from> to <to> - Create a new Pull Request for Deploy
 @ruboty remember my github token <token>                  - Remember sender's GitHub access token
+@ruboty label <URL> <labels separeted by comma>
 ```
 
 ## ENV
 ```
 GITHUB_BASE_URL - Pass GitHub base URL if needed (e.g. https://github.example.com)
 ```
-
-## Image
-![](https://raw.githubusercontent.com/r7kamura/ruboty-github/master/images/screenshot.png)
