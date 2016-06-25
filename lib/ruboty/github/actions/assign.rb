@@ -21,6 +21,7 @@ module Ruboty
 
         def assign
           client.update_issue(repository, issue_number, assignee: assignee)
+          message.reply("Assign #{repository}##{issue_number} to #{assignee}")
         end
 
         def issue_number

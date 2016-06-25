@@ -23,6 +23,7 @@ module Ruboty
           new_labels # memo before remove
           client.remove_all_labels(repository, issue_number)
           client.add_labels_to_an_issue(repository, issue_number, new_labels)
+          message.reply("Remove labels and present labels are [#{new_labels.join(', ')}]")
         end
 
         def new_labels

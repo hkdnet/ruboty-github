@@ -21,6 +21,7 @@ module Ruboty
 
         def add_labels
           client.add_labels_to_an_issue(repository, issue_number, labels)
+          message.reply("Add label(s) [#{labels.join(', ')}]")
         end
 
         def issue_number
