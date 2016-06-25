@@ -3,6 +3,7 @@ require "octokit"
 
 require "ruboty"
 require "ruboty/github/actions/base"
+require "ruboty/github/actions/assign"
 require "ruboty/github/actions/close_issue"
 require "ruboty/github/actions/create_issue"
 require "ruboty/github/actions/create_pull_request"

@@ -53,6 +53,12 @@ module Ruboty
         description: "Unlabel issue",
       )
 
+      on(
+        /assign #{ISSUE_PATTERN} @?(?<assignee>.+)$/m,
+        name: "assign",
+        description: "Assign someone to issue",
+      )
+
       def create_issue(message)
         Ruboty::Github::Actions::CreateIssue.new(message).call
       end
@@ -83,6 +89,10 @@ module Ruboty
 
       def unlabel_issue(message)
         Ruboty::Github::Actions::UnlabelIssue.new(message).call
+      end
+
+      def assign(message)
+        Ruboty::Github::Actions::Assign.new(message).call
       end
     end
   end
