@@ -42,9 +42,15 @@ module Ruboty
       )
 
       on(
-        /label #{ISSUE_PATTERN} (?<labels>.+)\z/,
+        /label #{ISSUE_PATTERN} (?<labels>.+)$/m,
         name: "label_issue",
         description: "Label issue",
+      )
+
+      on(
+        /unlabel #{ISSUE_PATTERN} (?<labels>.+)$/m,
+        name: "unlabel_issue",
+        description: "Unlabel issue",
       )
 
       def create_issue(message)
@@ -73,6 +79,10 @@ module Ruboty
 
       def label_issue(message)
         Ruboty::Github::Actions::LabelIssue.new(message).call
+      end
+
+      def unlabel_issue(message)
+        Ruboty::Github::Actions::UnlabelIssue.new(message).call
       end
     end
   end
