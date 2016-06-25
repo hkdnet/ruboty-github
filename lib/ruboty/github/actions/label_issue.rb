@@ -6,7 +6,7 @@ module Ruboty
           if !has_access_token?
             require_access_token
           else
-            label
+            add_labels
           end
         rescue Octokit::Unauthorized
           message.reply("Failed in authentication (401)")
@@ -19,8 +19,8 @@ module Ruboty
 
         private
 
-        def label
-          client.update_issue(repository, issue_number, labels: labels)
+        def add_labels
+          client.add_labels_to_an_issue(repository, issue_number, labels)
         end
 
         def issue_number
